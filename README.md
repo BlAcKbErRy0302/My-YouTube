@@ -7,4 +7,4 @@
 -- react-player 설치.       'npm install react-player'
 -- sass 설치.               'npm install sass'
 -- react-helmet-async 설치. 'npm install react-helmet-async'
--- swiper 설치              'npm install swiper'asdasd
+-- swiper 설치              'npm install swiper'
