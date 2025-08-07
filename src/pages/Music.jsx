@@ -1,10 +1,11 @@
 import React from 'react'
+import Main from '../components/section/Main'
 
 const Music = () => {
   return (
-    <div>
-      
-    </div>
+    <Main>
+      Music
+    </Main>
   )
 }
 

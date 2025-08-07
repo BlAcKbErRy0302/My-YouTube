@@ -1,10 +1,11 @@
 import React from 'react'
+import Main from '../components/section/Main'
 
 const Movie = () => {
   return (
-    <div>
-      
-    </div>
+    <Main>
+      Movie
+    </Main>
   )
 }
 

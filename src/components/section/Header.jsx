@@ -1,9 +1,21 @@
 import React from 'react'
 
-const header = () => {
+
+
+import Logo from '../header/Logo';
+import Menu from '../header/Menu';
+import Sns from '../header/Sns';
+
+const Header = () => {
+
   return (
-    <header id='header' role='banner'>Header</header>
+    <header id='header' role='banner'>
+        <Logo/>
+        <Menu/>
+        <Sns/>
+
+    </header>
   )
 }
 
-export default header
+export default Header

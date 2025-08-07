@@ -1,18 +1,19 @@
 #header{
     position: fixed;
     left: 0;
-    right: 0;
+    top: 0;
     width: 262px;
     height: 100%;
     z-index: 10000;
     background-color: #000;
+    overflow-y: auto;
 }
 
 #main{
     max-width: 2000px;
     min-height: 100vh;
     margin: 0 auto;
-    padding-left: 206px;
+    padding-left: 260px;
     background-color: #111;
 }
 
