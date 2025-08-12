@@ -30,7 +30,7 @@ export const headerMenus =[
     {
         title:"추천 영화",
         icon:<BiMoviePlay />,
-        src:"/moive"
+        src:"/movie"
     },
     {
         title:"추천 도서",
@@ -43,11 +43,6 @@ export const headerMenus =[
         src:"/anime"
     },
     {
-        title:"추천 영상",
-        icon:<BiSolidCameraMovie />,
-        src:"/today"
-    },
-    {
         title:"유튜브 사이트",
         icon:<FaYoutube />,
         src:"/youtube"
@@ -57,10 +52,6 @@ export const headerMenus =[
 
 
 export const searchKeyword =[
-    {
-        title:"MyYoutube",
-        src:"/search/youtube"
-    },
     {
         title:"HTML",
         src:"/search/html"

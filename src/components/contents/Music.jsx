@@ -1,26 +1,81 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { musicText } from '../../data/music'
 import { Link } from 'react-router-dom'
 
-const Music = () => {
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import { Autoplay, Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+const Music = ({videos, title, id}) => {
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 500)
+  },[]);
+
+  const musicClass = loading ? 'isloading' : 'isloaded';
+
   return (
-    <section id='music'>
-      <h2>😊추천 음악을 소개합니다.</h2>
-      <div className='music__inner overflow'>
-        {musicText.map((music, key) => (
-          <div className='music' key={key}>
-            <div className='music__img play__icon'>
-              <Link to={'/channel/${music.channelId}'}>
-                <img src={music.img} alt={music.name}/>
-              </Link>
+    <section id={id} className={musicClass}>
+      <h2>{title}</h2>
+      <div className='music__inner'>
+        <Swiper
+          sliderPerView={4}
+          spaceBetween={15}
+          navigation={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          breakpoints={{
+            640: {
+              slidesPerView: 5,
+              spaceBetween: 15
+            },
+            768: {
+              slidesPerView: 6,
+              spaceBetween: 15
+            },
+            1024: {
+              slidesPerView: 8,
+              spaceBetween: 15
+            },
+            1640: {
+              slidesPerView: 9,
+              spaceBetween: 15
+            },
+            2000: {
+              slidesPerView: 10,
+              spaceBetween: 15
+            }
+
+          }}
+          modules={[Autoplay, Navigation]}
+          className='mySwiper'
+        >
+        {videos.map((music, key) => (
+          <SwiperSlide key={key}>
+            <div className='music' key={key}>
+              <div className='music__img play__icon'>
+                <Link to={`/channel/${music.channelId}`}>
+                  <img src={music.img} alt={music.name}/>
+                </Link>
+              </div>
+              <div className='music__info'>
+                <Link to={'/channel/${music.channelId}'}>
+                  {music.name}
+                </Link>
+              </div>
             </div>
-            <div className='music__info'>
-              <Link to={'/channel/${music.channelId}'}>
-                {music.name}
-              </Link>
-            </div>
-          </div>
+          </SwiperSlide>
         ))}
+        </Swiper>
       </div>
     </section>
   )
